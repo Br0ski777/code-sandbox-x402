@@ -34,6 +34,28 @@ Do NOT use for persistent file storage -- sandbox is ephemeral. Do NOT use for g
         },
         required: ["code", "language"],
       },
+      outputSchema: {
+          "type": "object",
+          "properties": {
+            "output": {
+              "type": "string",
+              "description": "Code execution output (stdout)"
+            },
+            "language": {
+              "type": "string",
+              "description": "Language executed"
+            },
+            "executionTime": {
+              "type": "number",
+              "description": "Execution time in milliseconds"
+            }
+          },
+          "required": [
+            "output",
+            "language",
+            "executionTime"
+          ]
+        },
     },
   ],
 };
