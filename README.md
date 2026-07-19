@@ -37,7 +37,7 @@ Any x402-aware client ([`@x402/fetch`](https://www.npmjs.com/package/@x402/fetch
 
 | Tool | Method | Path | Price | Description |
 |---|---|---|---|---|
-| `code_execute_sandbox` | POST | `/api/execute` | $0.01 | Execute code in a sandboxed environment |
+| `code_execute_sandbox` | POST | `/api/execute` | $0.02 | Execute code in a sandboxed environment |
 
 ### `code_execute_sandbox`
 
