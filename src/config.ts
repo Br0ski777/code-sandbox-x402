@@ -9,7 +9,7 @@ export const API_CONFIG: ApiConfig = {
     {
       method: "POST",
       path: "/api/execute",
-      price: "$0.01",
+      price: "$0.02",
       description: "Execute code in a sandboxed environment",
       toolName: "code_execute_sandbox",
       toolDescription: `Use this when you need to execute Python, JavaScript, or SQL code in a sandboxed environment and get the output. Supports Python (subprocess), JavaScript (eval), and SQL (in-memory SQLite).
