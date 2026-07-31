@@ -42,7 +42,13 @@ async function executeJavaScript(code: string, timeout: number): Promise<{ outpu
 
 async function executePython(code: string, timeout: number): Promise<{ output: string; error?: string }> {
   try {
-    const proc = Bun.spawn(["python", "-c", code], {
+    // L'image de base n'expose que "python3" ; l'appel a "python" echouait avec
+    // "Executable not found in $PATH" tout en renvoyant un 200 facture.
+    const python = Bun.which("python3") ?? Bun.which("python");
+    if (!python) {
+      return { output: "", error: "Python runtime unavailable on this server" };
+    }
+    const proc = Bun.spawn([python, "-c", code], {
       stdout: "pipe",
       stderr: "pipe",
     });
